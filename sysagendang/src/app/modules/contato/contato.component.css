@@ -1,0 +1,13 @@
+.flex-conteiner {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.flex__item {
+    background-color: #bde4db;
+}
+
+table {
+    width: 100%;
+}

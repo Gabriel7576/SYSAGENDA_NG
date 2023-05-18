@@ -1,0 +1,20 @@
+.grid-layout {
+    height: 100vh;
+    display: grid;
+    grid-template-areas:
+        'h h h h'
+        'm m m m'
+    ;
+    grid-template-rows: 64px 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+cmp-header {
+    grid-area: h;
+}
+
+cmp-main {
+    grid-area: m;
+    background-color: #CBE4DE;
+    padding: 1rem;
+}

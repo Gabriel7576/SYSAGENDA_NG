@@ -1,0 +1,9 @@
+.flex-conteiner{
+    display: flex;
+    flex-flow: wrap column;
+    align-content: center;
+}
+
+:host >>> button{
+    background-color: #0e84885a !important;
+}
