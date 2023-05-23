@@ -1,0 +1,29 @@
+mat-toolbar{
+    background-color: #4d18df;
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+}
+
+.container{
+    display: flex;
+    align-items: center;
+}
+
+mat-icon{
+    color: white;
+    margin-left: 10px;
+    margin-right: 0px;
+}
+
+h3{
+    color: white;
+}
+
+.mat-mdc-button>.mat-icon {
+    margin-right: 0px;
+}
+
+.mat-ripple .mat-mdc-button-ripple:invalid{
+
+}

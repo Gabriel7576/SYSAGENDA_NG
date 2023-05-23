@@ -1,0 +1,22 @@
+.footer{
+    position: fixed;
+    bottom: 0;
+
+    display: flex;
+    justify-content: flex-end;
+    min-width: 10px;
+    font-size: calc(1em + 1vw);
+}
+
+.footer > span{
+    font-size: 1.1rem;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+.default{
+    text-decoration: none;
+}
+.default:visited{
+    color: black;
+}

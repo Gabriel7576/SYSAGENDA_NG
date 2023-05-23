@@ -1,0 +1,28 @@
+.sidenav {
+    background-color: #364775;
+    width: 200px;
+}
+
+a{
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    flex-direction: column;
+    align-content: stretch;
+}
+
+:host >>> .sidenav a span {
+    color: #FFF !important;
+}
+
+.sidenav mat-icon {
+    padding-right: 10px;
+}
+
+.content{
+    background-color: #FFF;
+}
+.content-router {
+  padding: 20px;
+}
