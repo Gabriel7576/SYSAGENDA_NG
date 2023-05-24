@@ -3,26 +3,18 @@
     width: 200px;
 }
 
-a{
-    margin-bottom: 20px;
+:host ::ng-deep .mdc-list-item__content>* {
+    color: white !important;
+}
+
+:host ::ng-deep .mat-mdc-list-item-unscoped-content.mdc-list-item__primary-text {
     display: flex;
-    flex-wrap: wrap;
-    align-items: flex-start;
-    flex-direction: column;
-    align-content: stretch;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
 }
 
-:host >>> .sidenav a span {
-    color: #FFF !important;
-}
-
-.sidenav mat-icon {
-    padding-right: 10px;
-}
-
-.content{
-    background-color: #FFF;
-}
-.content-router {
-  padding: 20px;
+.content {
+    height: calc(100vh - 128px);
+    padding: 10px;
 }
