@@ -1,10 +1,7 @@
-import { ContatoService } from './contato.service';
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort } from '@angular/material/sort';
-import { MatTable } from '@angular/material/table';
-import { Route, Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Contato } from 'src/app/core/models/contato';
+import { ContatoService } from './contato.service';
 
 @Component({
   selector: 'app-contato',
@@ -15,14 +12,17 @@ export class ContatoComponent implements OnInit {
 
   contatos: Contato[] = [];
 
-  displayedColumns = ['id', 'name', 'telefone'];
+  displayedColumns = ['codContato', 'name', 'telefone'];
 
-  constructor(private contatoService:ContatoService, private router: Router) {}
+  constructor(private contatoService: ContatoService, private router: Router) { }
+
 
   ngOnInit(): void {
     this.contatoService.readContato().subscribe(contatos => {
       this.contatos = contatos;
+      console.log(contatos);
     })
   }
 
 }
+
