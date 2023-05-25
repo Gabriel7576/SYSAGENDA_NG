@@ -1,13 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ContatoComponent } from './contato.component';
 
 
 
 @NgModule({
-  declarations: [
-    ContatoComponent
-  ],
+  declarations: [],
   imports: [
     CommonModule
   ]
