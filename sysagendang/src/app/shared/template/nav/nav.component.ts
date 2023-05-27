@@ -12,7 +12,6 @@ export class NavComponent {
   constructor(public nav: NavService) {
     this.nav.menu().subscribe(b => {
       this.opened = b;
-      console.log(b);
     })
   }
 }

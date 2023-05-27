@@ -1,5 +1,5 @@
 export interface Contato {
-    codContato: number;
+    codContato?: number;
     nome: string;
     telefone: number;
 }

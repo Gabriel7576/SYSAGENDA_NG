@@ -1,8 +1,12 @@
 mat-toolbar{
-    background-color: #4d18df;
     display: flex;
     justify-content: space-between;
     height: 64px;
+}
+
+h2{
+    color: white;
+    margin-bottom: 0px;
 }
 
 .container{

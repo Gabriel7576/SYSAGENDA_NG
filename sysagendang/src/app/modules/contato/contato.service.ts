@@ -13,6 +13,10 @@ export class ContatoService {
 
   constructor(private http:HttpClient, private snackBar:MatSnackBar) { }
 
+  createContato(contato:Contato): Observable<Contato>{
+    return this.http.post<Contato>(this.url, contato);
+  }
+
   readContato(): Observable<Contato[]>{
     return this.http.get<Contato[]>(this.url + '/list');
   }

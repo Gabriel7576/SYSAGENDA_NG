@@ -2,3 +2,7 @@ mat-card{
     display: flex;
     align-items: center;
 }
+
+img{
+    max-width: 100%;
+}

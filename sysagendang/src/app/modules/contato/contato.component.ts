@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Contato } from 'src/app/core/models/contato';
 import { ContatoService } from './contato.service';
@@ -8,20 +10,27 @@ import { ContatoService } from './contato.service';
   templateUrl: './contato.component.html',
   styleUrls: ['./contato.component.css']
 })
-export class ContatoComponent implements OnInit {
+export class ContatoComponent implements OnInit, AfterViewInit {
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  contatos: Contato[] = [];
+  dataSource = new MatTableDataSource<Contato>();
+  displayedColumns = ['codContato', 'nome', 'telefone', 'numero'];
 
-  displayedColumns = ['codContato', 'name', 'telefone'];
-
-  constructor(private contatoService: ContatoService, private router: Router) { }
-
+  constructor(private contatoService: ContatoService, private router: Router) {
+  }
 
   ngOnInit(): void {
     this.contatoService.readContato().subscribe(contatos => {
-      this.contatos = contatos;
-      console.log(contatos);
+      this.dataSource.data = contatos;
     })
+  }
+
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+  }
+
+  redirectTo() {
+    this.router.navigate(['contato/create']);
   }
 
 }
