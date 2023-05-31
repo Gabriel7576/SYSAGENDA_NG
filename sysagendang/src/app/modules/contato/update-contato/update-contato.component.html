@@ -1,0 +1,29 @@
+<mat-card mat-elevation-z8>
+
+    <div class="container">
+
+        <h2>Novo Contato</h2>
+
+        <mat-form-field>
+            <input matInput placeholder="Id" type="number" readonly [(ngModel)]="contato.codContato" name="id">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Nome" type="text" [(ngModel)]="contato.nome" name="name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput placeholder="Telefone" type="text" [(ngModel)]="contato.telefone" name="telefone"
+                mask="(00) 00000-0000">
+        </mat-form-field>
+
+        <div class="button">
+            <button mat-raised-button color="primary" (click)="salvar()">Salvar</button>
+        </div>
+        <div class="button">
+            <button mat-raised-button color="primary" (click)="cancel()">Cancelar</button>
+        </div>
+
+    </div>
+
+</mat-card>

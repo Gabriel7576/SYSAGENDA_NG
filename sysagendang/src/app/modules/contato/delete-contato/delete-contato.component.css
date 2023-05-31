@@ -1,0 +1,15 @@
+div{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+p{
+    padding: 10px 0px 0px 0px;
+}
+
+mat-card-content{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
