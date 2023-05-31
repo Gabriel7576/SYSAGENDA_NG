@@ -4,6 +4,30 @@
 
 .container_button{
   display: flex;
-  justify-content: right;
+  justify-content: space-between;
   padding: 10px;
+}
+
+mat-sidenav{
+  background-color: transparent;
+}
+
+.responsive{
+  max-width: 100%;
+}
+
+a{
+  padding-right: 5px;
+}
+
+mat-sidenav-container{
+  display: flex;
+}
+
+.mat-drawer:not(.mat-drawer-side){
+  box-shadow: none;
+}
+
+.paint_icon{
+  color: rgb(29, 155, 100);
 }

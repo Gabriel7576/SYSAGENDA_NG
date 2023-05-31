@@ -34,7 +34,6 @@ registerLocaleData(localePt);
     HeaderComponent,
     FooterComponent,
     NavComponent,
-    ContatoComponent
   ],
   imports: [
     BrowserModule,
@@ -47,9 +46,6 @@ registerLocaleData(localePt);
     MatCardModule,
     MatListModule,
     HomeModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatSortModule,
     ContatoModule,
     HttpClientModule,
     MatSnackBarModule,
