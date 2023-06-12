@@ -1,0 +1,15 @@
+<mat-card>
+    <div>
+        <h1>Excluir</h1>
+        <mat-card-content>
+            <img src="https://gifs.eco.br/wp-content/uploads/2022/10/gifs-de-lixo-39.gif">
+        </mat-card-content>
+        <p>Tem Certeza que você deseja excluir esse contato?,
+            <b>essa ação não podera ser desfeita!</b>
+        </p>
+    </div>
+    <mat-card-content>
+        <button mat-raised-button color="primary" (click)="deletar(codContato,codLigacao)">Excluir</button>
+        <button mat-raised-button color="primary" (click)="cancel()">Cancelar</button>
+    </mat-card-content>
+</mat-card>

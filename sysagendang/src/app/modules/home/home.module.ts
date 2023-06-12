@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { MatCardModule } from '@angular/material/card';
 import { HomeComponent } from './home.component';
+import { MatButtonModule } from '@angular/material/button';
 
 
 @NgModule({
@@ -10,7 +11,8 @@ import { HomeComponent } from './home.component';
   ],
   imports: [
     CommonModule,
-    MatCardModule
+    MatCardModule,
+    MatButtonModule
   ],
   exports: [
     HomeComponent

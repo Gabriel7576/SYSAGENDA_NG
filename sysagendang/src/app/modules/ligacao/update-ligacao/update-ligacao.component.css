@@ -1,0 +1,28 @@
+mat-form-field {
+    width: 70%;
+    padding-left: 10px;
+}
+
+h2{
+    padding-left: 10px;
+}
+
+.conteiner-form {
+    display: flex;
+    flex-wrap: nowrap;
+    width: 60%;
+}
+
+.conteiner-button {
+    display: flex;
+    justify-content: right;
+    margin-right: 10px;
+}
+
+.margin-button {
+    margin-top: 10px;
+}
+
+.width-obs {
+    width: 80%;
+}

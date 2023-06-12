@@ -1,6 +1,8 @@
 package br.com.gabriel.sysagendasrv.domain;
 // Generated 18 de mar. de 2023 17:26:26 by Hibernate Tools 4.3.5.Final
 
+import java.util.Objects;
+
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
 
@@ -39,6 +41,23 @@ public class LigacaoId implements java.io.Serializable {
 
 	public void setCodLigacao(int codLigacao) {
 		this.codLigacao = codLigacao;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(codContato, codLigacao);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		LigacaoId other = (LigacaoId) obj;
+		return codContato == other.codContato && codLigacao == other.codLigacao;
 	}
 
 }

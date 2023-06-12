@@ -1,0 +1,43 @@
+.full-width-table {
+    width: 100%;
+}
+
+.container_button {
+    display: flex;
+    justify-content: flex-end;
+}
+
+mat-sidenav {
+    background-color: transparent;
+}
+
+a {
+    padding-right: 5px;
+}
+
+.mdc-data-table__cell,
+.mdc-data-table__cell,
+.mdc-data-table__header-cell {
+    padding: 0px 0px 0px 10px;
+}
+
+@media (max-width:555px) {
+
+    .mdc-data-table__cell,
+    .mdc-data-table__cell,
+    .mdc-data-table__header-cell {
+        padding: 0px 0px 0px 0px;
+    }
+}
+
+.mat-drawer:not(.mat-drawer-side) {
+    box-shadow: none;
+}
+
+.paint_icon {
+    color: rgb(29, 155, 100);
+}
+
+ng-container {
+    max-width: 10px;
+}

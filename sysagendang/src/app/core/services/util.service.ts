@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
@@ -6,9 +7,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 })
 export class UtilService {
 
-  constructor(private snackBar:MatSnackBar) { }
+  constructor(private snackBar: MatSnackBar) { }
 
-  showMessageBtn(msg: string, button:string): void {
+  showMessageBtn(msg: string, button: string): void {
 
     this.snackBar.open(msg, button, {
       duration: 3000,
@@ -25,6 +26,20 @@ export class UtilService {
       horizontalPosition: "center",
       verticalPosition: "top"
     })
-
   }
+
+  joinDatewithHours(data: Date, hora: string): Date {
+
+    data = new Date(data);
+
+    return new Date(data.getFullYear(), data.getMonth(), data.getDate(), + hora.split(":")[0], + hora.split(":")[1]);
+  }
+
+  dateToHours(date: Date): string {
+    const datePipe = new DatePipe('en-US');
+    const myDate = date;
+    const formattedTime = datePipe.transform(myDate, 'HH:mm');
+    return formattedTime;
+  }
+
 }

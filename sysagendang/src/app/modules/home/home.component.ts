@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
 
+  constructor(private router:Router){}
+
+  redirectContato(): void{
+    this.router.navigate(['/contato']);
+  }
+
+  redirectLigacao(): void{
+    this.router.navigate(['/ligacao']);
+  }
 }

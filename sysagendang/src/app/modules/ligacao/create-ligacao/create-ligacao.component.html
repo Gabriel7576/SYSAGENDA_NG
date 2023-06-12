@@ -1,0 +1,61 @@
+<mat-card mat-elevation-z8>
+
+    <h2>Adicionar Ligação</h2>
+
+    <mat-form-field>
+
+        <mat-label>Contato</mat-label>
+        <mat-label class="red">*</mat-label>
+
+        <mat-select [(ngModel)]="ligacao.id.codContato">
+            <mat-option *ngFor="let contato of contatos" [value]="contato.codContato">
+                {{contato.nome}}
+            </mat-option>
+        </mat-select>
+
+    </mat-form-field>
+
+    <mat-form-field>
+
+        <mat-label>Codigo da Ligacao</mat-label>
+        <input matInput readonly>
+
+    </mat-form-field>
+
+    <div class="conteiner-form">
+
+        <mat-form-field>
+
+            <mat-label>Data</mat-label>
+            <mat-label class="red">*</mat-label>
+            <input matInput [matDatepicker]="datepicker" readonly [(ngModel)]="data">
+            <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+            <mat-datepicker #datepicker></mat-datepicker>
+
+        </mat-form-field>
+
+        <mat-form-field>
+
+            <mat-label>Hora</mat-label>
+            <mat-label class="red">*</mat-label>
+            <input matInput type="time" [(ngModel)]="hora">
+
+        </mat-form-field>
+
+    </div>
+
+    <mat-form-field class="width-obs">
+
+        <mat-label>Observação</mat-label>
+        <textarea matInput [(ngModel)]="ligacao.observacao"></textarea>
+
+    </mat-form-field>
+
+    <div class="conteiner-button">
+        <button mat-raised-button color="primary" (click)="salvar(ligacao)">Salvar</button>
+    </div>
+    <div class="conteiner-button margin-button">
+        <button mat-raised-button color="primary">Cancelar</button>
+    </div>
+
+</mat-card>

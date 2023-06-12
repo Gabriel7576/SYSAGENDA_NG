@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, HostListener, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
@@ -18,7 +18,7 @@ export class ContatoComponent implements OnInit, AfterViewInit {
   dataSource = new MatTableDataSource<Contato>();
   displayedColumns = ['codContato', 'nome', 'telefone', 'checkbox'];
 
-  constructor(private contatoService: ContatoService, private router: Router) {
+  constructor(private contatoService: ContatoService, private router: Router, private changeDetectorRef: ChangeDetectorRef) {
   }
 
   ngOnInit(): void {
@@ -29,10 +29,39 @@ export class ContatoComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit(): void {
     this.dataSource.paginator = this.paginator;
+    this.updatePageSize();
+  }
+
+  @HostListener("window:resize")
+  onResize() {
+    this.updatePageSize();
   }
 
   redirectTo() {
     this.router.navigate(['contato/create']);
+  }
+
+  updatePageSize(): void {
+
+    const rowHeight = 51.99;
+    const tableHeaderHeight = 56;
+    const tableFooterHeight = 64;
+    const headerHeight = 64;
+    const footerHeight = 64;
+    const padding = 40;
+
+    // Altura disponível para a tabela
+    const availableHeight = window.innerHeight - headerHeight - footerHeight - padding * 2;
+
+    // Calcular o número de linhas visíveis na tabela
+    const tableContentHeight = availableHeight - tableHeaderHeight - tableFooterHeight;
+    const visibleRows = Math.floor(tableContentHeight / rowHeight);
+
+    // Calcular o tamanho da página do paginador
+    const pageSize = visibleRows;
+
+    this.dataSource.paginator.pageSize = pageSize;
+    this.changeDetectorRef.detectChanges();
   }
 
 }

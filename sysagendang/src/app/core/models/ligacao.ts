@@ -1,5 +1,8 @@
+import { LigacaoId } from "./ligacao-id";
+
 export interface Ligacao {
-    id?:number;
-    data?:Date;
+    id:LigacaoId
+    dataHora?:Date;
     observacao?:string;
+    
 }

@@ -5,7 +5,10 @@
     <mat-card-subtitle>
         <p>Você é muito foda</p>
     </mat-card-subtitle>
-    <mat-card-content>
-        <img mat-card-image src="https://64.media.tumblr.com/14dffe85e74f6bad61d26004f77522df/3c0a323e940c84fe-79/s540x810/a815feb06394643dfccbca26de3ef284b5e8e5c2.gif">
-    </mat-card-content>
+    <div>
+        <mat-card-content>
+            <button mat-raised-button (click)="redirectContato()">Contato</button>
+            <button mat-raised-button (click)="redirectLigacao()">Ligação</button>
+        </mat-card-content>
+    </div>
 </mat-card>

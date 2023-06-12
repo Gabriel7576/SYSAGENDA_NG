@@ -1,7 +1,6 @@
-import { Observable } from 'rxjs';
-import { MatSnackBar } from '@angular/material/snack-bar';
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Contato } from 'src/app/core/models/contato';
 
 @Injectable({
@@ -11,7 +10,7 @@ export class ContatoService {
 
   baseUrl = 'http://10.100.0.125:8080/sysagendasrv/api/contato';
 
-  constructor(private http: HttpClient, private snackBar: MatSnackBar) { }
+  constructor(private http: HttpClient) { }
 
   create(contato: Contato): Observable<Contato> {
     return this.http.post<Contato>(this.baseUrl, contato);

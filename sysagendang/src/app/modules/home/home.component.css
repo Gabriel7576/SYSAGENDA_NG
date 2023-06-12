@@ -3,6 +3,11 @@ mat-card{
     align-items: center;
 }
 
+div{
+    display: flex;
+    flex-direction: row-reverse;
+}
+
 img{
     max-width: 100%;
 }
